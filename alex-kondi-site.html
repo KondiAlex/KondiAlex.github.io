@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Kondi, PhD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text: #1a1a1a;
+    --muted: #555;
+    --faint: #888;
+    --rule: #e5e5e5;
+    --bg: #fdfdfc;
+    --link: #8b2e2e;
+    --link-hover: #6b1e1e;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 64px 28px 80px;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Source Serif 4', 'Charter', 'Georgia', serif;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 4px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.35rem;
+    margin: 0 0 18px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+
+  p { margin: 0 0 14px; }
+
+  a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  a:hover {
+    color: var(--link-hover);
+    border-bottom-color: var(--link-hover);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 44px 0;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: #e8e6e2;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Source Serif 4', serif;
+    font-size: 2rem;
+    color: #a8a39b;
+    font-style: italic;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .header-text { flex: 1; min-width: 0; }
+
+  .title {
+    color: var(--muted);
+    font-size: 1rem;
+    margin: 0 0 10px;
+    line-height: 1.45;
+  }
+
+  .contacts {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .contacts a { color: var(--muted); }
+  .contacts a:hover { color: var(--link-hover); border-bottom-color: var(--link-hover); }
+  .contacts .sep {
+    margin: 0 8px;
+    color: var(--faint);
+  }
+
+  section { margin: 0; }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  ul li {
+    margin-bottom: 6px;
+  }
+
+  .experience-list,
+  .education-list,
+  .awards-list,
+  .pubs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .experience-list li,
+  .education-list li,
+  .awards-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+    padding: 0;
+  }
+
+  .experience-list .role,
+  .education-list .degree,
+  .awards-list .desc {
+    flex: 1;
+  }
+
+  .experience-list .date,
+  .education-list .date,
+  .awards-list .date {
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .sub {
+    display: block;
+    color: var(--muted);
+    font-size: 0.93rem;
+    margin-top: 1px;
+  }
+
+  .pubs-list li {
+    margin-bottom: 18px;
+  }
+  .pub-title {
+    font-weight: 500;
+    color: var(--text);
+  }
+  .pub-meta {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 2px;
+  }
+  .pub-venue { font-style: italic; }
+  .pub-links {
+    font-size: 0.88rem;
+    margin-top: 4px;
+  }
+  .pub-links a {
+    margin-right: 10px;
+    color: var(--muted);
+  }
+
+  .note {
+    color: var(--faint);
+    font-size: 0.9rem;
+    margin-top: 14px;
+    font-style: italic;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    color: var(--faint);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 560px) {
+    .container { padding: 40px 20px 56px; }
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .avatar { width: 80px; height: 80px; }
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.2rem; }
+    .contacts .sep { margin: 0 6px; }
+    .experience-list li,
+    .education-list li,
+    .awards-list li {
+      flex-direction: column;
+      gap: 2px;
+    }
+    .experience-list .date,
+    .education-list .date,
+    .awards-list .date {
+      font-size: 0.85rem;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="avatar" aria-hidden="true">AK</div>
+    <div class="header-text">
+      <h1>Alex Kondi, PhD</h1>
+      <div class="title">Senior R&amp;D Engineer, Nanometrisis<br>NCSR Demokritos · University of Athens</div>
+      <div class="contacts">
+        <a href="mailto:a.kondi@inn.demokritos.gr">Email</a><span class="sep">·</span>
+        <a href="https://scholar.google.com/citations?user=VW3o-ekAAAAJ">Google Scholar</a><span class="sep">·</span>
+        <a href="#">ORCID</a><span class="sep">·</span>
+        <a href="#">LinkedIn</a><span class="sep">·</span>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <hr>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I hold a PhD in Physics and work on computational nanometrology, AI for science,
+      and machine learning for the characterization of micro- and nanostructures.
+      My research focuses on SEM-based metrology, image analysis, morphology quantification,
+      and data-driven modeling for semiconductor manufacturing and advanced materials.
+    </p>
+  </section>
+
+  <hr>
+
+  <section id="interests">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Computational nanometrology</li>
+      <li>SEM-based metrology &amp; image analysis</li>
+      <li>Machine learning for materials characterization</li>
+      <li>Morphology quantification of micro-/nanostructures</li>
+      <li>AI for science &amp; semiconductor manufacturing</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section id="experience">
+    <h2>Experience &amp; Visiting Appointments</h2>
+    <ul class="experience-list">
+      <li>
+        <div class="role">
+          <strong>Senior R&amp;D Engineer</strong>, Nanometrisis P.C.
+        </div>
+        <div class="date">2026–Present</div>
+      </li>
+      <li>
+        <div class="role">
+          <strong>Visiting Researcher</strong>, PTB (Physikalisch-Technische Bundesanstalt)
+        </div>
+        <div class="date">2026</div>
+      </li>
+      <li>
+        <div class="role">
+          <strong>R&amp;D Researcher</strong>, NCSR Demokritos — Plasma Group
+          <span class="sub">PlasmAI: ML &amp; metrology for plasma etching and reactor simulations (Intel &amp; Merck)</span>
+        </div>
+        <div class="date">2024–2025</div>
+      </li>
+      <li>
+        <div class="role">
+          <strong>Visiting Researcher</strong>, NATO STO-CMRE
+          <span class="sub">Climate change &amp; security; simulations for underwater communications in the high north</span>
+        </div>
+        <div class="date">2023</div>
+      </li>
+      <li>
+        <div class="role">
+          <strong>R&amp;D Researcher</strong>, NCSR Demokritos — Plasma Group
+          <span class="sub">CarbyneSense (ERANET): ML &amp; metrology for carbyne nanomaterial characterization</span>
+        </div>
+        <div class="date">2022–2023</div>
+      </li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul class="education-list">
+      <li>
+        <div class="degree">
+          <strong>PhD, Physics</strong>, National and Kapodistrian University of Athens &amp; NCSR Demokritos
+          <span class="sub">Thesis: Computational methods for the characterization, modeling and reconstruction of complex heterogeneous nanomaterials — Supervisor: V. Constantoudis</span>
+        </div>
+        <div class="date">2021–2025</div>
+      </li>
+      <li>
+        <div class="degree">
+          <strong>MSc, Mathematical Modeling in Modern Technologies, Financial Engineering &amp; Data Science</strong>, National Technical University of Athens
+        </div>
+        <div class="date">2019–2021</div>
+      </li>
+      <li>
+        <div class="degree">
+          <strong>MSc, Computational Mechanics</strong>, National Technical University of Athens
+        </div>
+        <div class="date">2019–2021</div>
+      </li>
+      <li>
+        <div class="degree">
+          <strong>BSc, Physics</strong>, National and Kapodistrian University of Athens
+        </div>
+        <div class="date">2014–2019</div>
+      </li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section id="awards">
+    <h2>Awards</h2>
+    <ul class="awards-list">
+      <li>
+        <div class="desc">
+          <strong>European Physical Society Best Poster Award</strong><br>
+          <span style="color: var(--muted); font-size: 0.95rem;">XXXV IUPAP Conference on Computational Physics — poster: “Quantitative Characterization of Micro- and Nanoscale Surface Complexity: A Comparative Analysis”</span>
+        </div>
+        <div class="date">2024</div>
+      </li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="pubs-list">
+      <li>
+        <div class="pub-title">Measurement of thickness of thin coatings on rough substrates via computational analysis of SEM images</div>
+        <div class="pub-meta">A. Kondi, E.-M. Papia, V. Constantoudis, D. Nioras, I. Syngelakis, C. Aivalioti, … E. Gogolides — <span class="pub-venue">Micro and Nano Engineering</span>, 2025</div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1016/j.mne.2025.100315">DOI</a>
+        </div>
+      </li>
+      <li>
+        <div class="pub-title">Computational methods in nanometrology: the challenges of resolution and stochasticity</div>
+        <div class="pub-meta">A. Kondi, E.-M. Papia, E. Stai, V. Constantoudis — <span class="pub-venue">Frontiers in Nanotechnology</span>, 2025</div>
+        <div class="pub-links">
+          <a href="https://www.frontiersin.org/journals/nanotechnology/articles/10.3389/fnano.2025.1559523/full">PDF</a>
+          <a href="https://doi.org/10.3389/fnano.2025.1559523">DOI</a>
+        </div>
+      </li>
+      <li>
+        <div class="pub-title">Quantifying the complexity of rough surfaces using multiscale entropy: the critical role of binning in controlling amplitude effects</div>
+        <div class="pub-meta">A. Kondi, V. Constantoudis, P. Sarkiris, E. Gogolides — <span class="pub-venue">Mathematics</span>, 2025</div>
+        <div class="pub-links">
+          <a href="https://www.mdpi.com/2227-7390/13/15/2325">PDF</a>
+          <a href="https://doi.org/10.3390/math13152325">DOI</a>
+        </div>
+      </li>
+      <li>
+        <div class="pub-title">Machine learning applications in nanotechnology manufacturing: from etching accuracy to deposition prediction</div>
+        <div class="pub-meta">A. Kondi, E.-M. Papia, V. Constantoudis — <span class="pub-venue">SETN '24: 13th Hellenic Conference on Artificial Intelligence</span>, ACM, 2024</div>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1145/3688671.3688740">DOI</a>
+        </div>
+      </li>
+      <li>
+        <div class="pub-title">Using chaotic dynamics to characterize the complexity of rough surfaces</div>
+        <div class="pub-meta">A. Kondi, V. Constantoudis, P. Sarkiris, K. Ellinas, E. Gogolides — <span class="pub-venue">Physical Review E</span>, 2023</div>
+        <div class="pub-links">
+          <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.107.014206">PDF</a>
+          <a href="https://doi.org/10.1103/PhysRevE.107.014206">DOI</a>
+        </div>
+      </li>
+    </ul>
+    <div class="note">Selected publications — full list on <a href="https://scholar.google.com/citations?user=VW3o-ekAAAAJ">Google Scholar</a>.</div>
+  </section>
+
+  <hr>
+
+  <section id="talks">
+    <h2>Talks &amp; Posters</h2>
+    <p>20+ talks and posters at international conferences. <a href="#">Full CV (PDF)</a>.</p>
+  </section>
+
+  <footer>
+    © 2026 Alex Kondi · Last updated April 2026
+  </footer>
+
+</div>
+</body>
+</html>
